@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Lock, User, Eye, EyeOff, ArrowRight, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000";
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");

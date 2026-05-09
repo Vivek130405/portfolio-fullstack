@@ -6,7 +6,7 @@ import { Mail, Phone, MessageSquare, Calendar, RefreshCw, ArrowLeft, LogOut } fr
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000";
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "";
 
 interface Message {
   _id: string;
