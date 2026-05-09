@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050505;
+  --foreground: #f3f4f6;
+  --neon-blue: #00f0ff;
+  --neon-purple: #8a2be2;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-neon-blue: var(--neon-blue);
+  --color-neon-purple: var(--neon-purple);
+  --color-glass: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  --font-sans: "Inter", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", Arial, sans-serif;
+  overflow-x: hidden;
+  cursor: none; /* Custom cursor replaces this */
+}
+
+/* ================================
+   Custom Scrollbar
+================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neon-blue), var(--neon-purple));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-blue);
+}
+
+/* ================================
+   Utility helpers for glassmorphism
+================================ */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.neon-text-blue {
+  color: var(--neon-blue);
+}
+
+.neon-text-purple {
+  color: var(--neon-purple);
+}
+
+.neon-glow-blue {
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.neon-glow-purple {
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+}
+
+/* ================================
+   Selection color
+================================ */
+::selection {
+  background: rgba(0, 240, 255, 0.2);
+  color: white;
+}
+
+/* ================================
+   Hide scrollbar utility
+================================ */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ================================
+   Line clamp
+================================ */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
